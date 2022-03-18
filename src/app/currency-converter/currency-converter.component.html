@@ -1,0 +1,7 @@
+<form>
+    <div><span>From</span></div>
+    <app-currency [currencies]="currencies" [isEditable]="true"></app-currency>
+    <div><span>To</span></div>
+    <app-currency [currencies]="currencies" [isEditable]="false"></app-currency>
+    <button (click)="convert()">Convert</button>
+</form>
