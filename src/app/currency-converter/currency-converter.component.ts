@@ -23,7 +23,7 @@ export class CurrencyConverterComponent implements OnInit {
   }
 
   public getCurrencies(): void {
-    this.currencies = this.currencyService.getCurrencies()
+    this.currencies = this.currencyService.getCurrencies();
   }
 
   public convert(): void {

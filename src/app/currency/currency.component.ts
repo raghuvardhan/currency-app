@@ -10,8 +10,9 @@ export class CurrencyComponent implements OnInit {
 
   @Input() public currencies: Currency[] = [];
   @Input() public isEditable: boolean = true;
+  @Input() public amount: number = 1;
 
-  @Output() public amount = new EventEmitter<number>();
+  @Output() public amountChange = new EventEmitter<number>();
 
   constructor() { }
 

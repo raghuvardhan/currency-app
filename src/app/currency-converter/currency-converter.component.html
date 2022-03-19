@@ -1,7 +1,13 @@
 <form>
-    <div><span>From</span></div>
-    <app-currency [currencies]="currencies" [isEditable]="true"></app-currency>
-    <div><span>To</span></div>
-    <app-currency [currencies]="currencies" [isEditable]="false"></app-currency>
-    <button (click)="convert()">Convert</button>
+    <span>From</span>
+    <select [(ngModel)]="fromCurrency" name="fromCurrency">
+        <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency.id }}</option>
+    </select>
+    <input type="number" [(ngModel)]="fromAmount" name="fromAmount"/>
+    <span>To</span>
+    <select [(ngModel)]="toCurrency" name="toCurrency">
+        <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency.id }}</option>
+    </select>
+    <input type="number" [(ngModel)]="toAmount" name="toAmount"/>
+    <button type="submit" (click)="convert()">Convert</button>
 </form>

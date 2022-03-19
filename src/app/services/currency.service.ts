@@ -23,35 +23,36 @@ export class CurrencyService {
     }
 
     public convertCurrency(from: Currency, to: Currency, amount: number): number{
-        return amount * this.getExchangeRate(from, to);
+        return amount / this.getExchangeRate(from, to);
     }
 
     private getExchangeRate(from: Currency, to: Currency): number{
         const mockCurrencyExchanges: CurrencyExchange[] = [
             {
                 fromCurrency: {
+                    id:"USD",
                     name:"United States Dollar",
-                    id:"USD"
                 },
                 toCurrency:{
+                    id:"INR",
                     name:"Indian National Rupee",
-                    id:"INR"
                 },
                 rate: 0.013
             },
             {
                 toCurrency: {
+                    id:"USD",
                     name:"United States Dollar",
-                    id:"USD"
                 },
                 fromCurrency:{
+                    id:"INR",
                     name:"Indian National Rupee",
-                    id:"INR"
                 },
                 rate: 75
             }
         ];
 
-        return mockCurrencyExchanges.find((currencyExchange) => currencyExchange.fromCurrency == from && currencyExchange.toCurrency == to)?.rate ?? 1;
+        const result =  mockCurrencyExchanges.find((currencyExchange) => currencyExchange.fromCurrency.id == from.id && currencyExchange.toCurrency.id == to.id)?.rate ?? 1;
+        return result;
     }
 }
