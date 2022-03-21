@@ -1,0 +1,23 @@
+#currencyConverter{
+    border-radius: 25px;
+    background: linear-gradient(225deg, #f0f0f0, #cacaca);
+    box-shadow:  -20px 20px 40px #bebebe,
+         20px -20px 40px #ffffff;
+    width: 50%;
+    margin: auto;
+}
+
+.currency{
+    width: 50%;
+    margin: 5px auto 5px auto;
+}
+
+.amount{
+    width: 50%;
+    margin: 5px auto 5px auto;
+}
+
+.button{
+    width: 30%;
+    margin: auto;
+}

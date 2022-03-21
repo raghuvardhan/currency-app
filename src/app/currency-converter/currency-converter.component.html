@@ -1,13 +1,23 @@
-<form>
-    <span>From</span>
-    <select [(ngModel)]="fromCurrency" name="fromCurrency">
-        <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency.id }}</option>
-    </select>
-    <input type="number" [(ngModel)]="fromAmount" name="fromAmount"/>
-    <span>To</span>
-    <select [(ngModel)]="toCurrency" name="toCurrency">
-        <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency.id }}</option>
-    </select>
-    <input type="number" [(ngModel)]="toAmount" name="toAmount"/>
-    <button type="submit" (click)="convert()">Convert</button>
+<form id="currencyConverter">
+    <div class="currency">
+        <span>From</span>
+        <select [(ngModel)]="fromCurrency" name="fromCurrency">
+            <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency.id }}</option>
+        </select>
+    </div>
+    <div class="amount">
+        <input type="number" [(ngModel)]="fromAmount" name="fromAmount"/>
+    </div>
+    <div class="currency">
+        <span>To</span>
+        <select [(ngModel)]="toCurrency" name="toCurrency">
+            <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency.id }}</option>
+        </select>
+    </div>
+    <div class="amount">
+        <input type="number" [(ngModel)]="toAmount" name="toAmount"/>
+    </div>
+    <div class="button">
+        <button type="submit" (click)="convert()">Convert</button>
+    </div>
 </form>
